@@ -11,14 +11,8 @@
     (gimp-image-scale image 96 96)
 
     ;Save file in directory
-    (file-png-save 0 image layer dir "favicon-96x96.png"
-     TRUE 9 FALSE TRUE FALSE FALSE TRUE)
-
-    ;Init var a at 1.
-    ;(let* ( variables )  expressions )
-    ;@example (let* ( (a 1)(b 2) )  (+ a b) )
-    ;Set new value in var.
-    ;@example (let* ( (theNum 10) ) (set! theNum (+ theNum theNum)) )
+    ;(file-png-save 0 image layer dir "favicon-96x96.png"
+    ; TRUE 9 FALSE TRUE FALSE FALSE TRUE)
 )
 
 ;Add Button in Gimp directory and Description script
