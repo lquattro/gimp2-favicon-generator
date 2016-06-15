@@ -4,15 +4,29 @@
   ;@param layer is drawable
   (script-fu-favicon-generator image layer dir)
 
-    ;Scale image per 96x96
-    ;@param image
-    ;@param width
-    ;@param height
-    (gimp-image-scale image 96 96)
+    ;Set Local Variables
+    (let* 
+      (
+        ;Create new variable SF-IMAGE.
+        (img image)
+        ;Create new variable String.
+        (fav96 "favicon-96x96.png")
+        ;Create new variable SF-DIRNAME+"/"+fav96.
+        (dirdoc (string-append dir "/" fav96))
+      )
 
-    ;Save file in directory
-    ;(file-png-save 0 image layer dir "favicon-96x96.png"
-    ; TRUE 9 FALSE TRUE FALSE FALSE TRUE)
+      ;Log message
+      (gimp-message dirdoc)
+
+      ;Scale image per 96x96
+      ;@param image
+      ;@param width
+      ;@param height
+      (gimp-image-scale img 96 96)
+
+      ;Save file in directory
+      (gimp-file-save RUN-NONINTERACTIVE img layer dirdoc fav96)
+    )
 )
 
 ;Add Button in Gimp directory and Description script
